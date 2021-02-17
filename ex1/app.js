@@ -8,6 +8,8 @@ const path = require('path');
 const homeRouter = require(path.join(__dirname, 'routes', 'home.js'));
 const contactRouter = require(path.join(__dirname, 'routes', 'contact.js'));
 const aboutRouter = require(path.join(__dirname, 'routes', 'about.js'));
+const productRouter = require(path.join(__dirname, 'routes', 'product.js'));
+
 
 const app = express();
 
@@ -21,6 +23,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use('/', homeRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
+app.use('/product', productRouter)
 
 
 app.listen(PORT, () => {

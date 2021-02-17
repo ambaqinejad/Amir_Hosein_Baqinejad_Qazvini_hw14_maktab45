@@ -7,7 +7,7 @@
 
 <body>
     <div class="container-fluid">
-        <%- include('../partials/navbar.ejs', active) %>
+        <%- include('../partials/navbar.ejs', active, title) %>
             <div class="row">
                 <% shoes.forEach(shoe => { %>
                     <div class="col-sm-12 col-md-6 col-lg-4 pad-30">
@@ -22,7 +22,7 @@
                                 <p><span>جنس: </span><span><%= shoe.material %></span></p>
                                 <p><span>قیمت: </span><span><%= shoe.price %> تومان</span></p>
                                 <p><span>توضیحات: </span><span><%= shoe.description %></span></p>
-                                <a href="#" class="btn btn-primary buy-btn">خرید</a>
+                                <a id="buy-btn" href="/product/<%= shoe.id %> " class="btn btn-primary buy-btn">خرید</a>
                             </div>
                         </div>
                     </div>
@@ -31,6 +31,7 @@
             </div>
     </div>
     <%- include('../partials/scripts.ejs') %>
+        <script src="/public/js/main.js"></script>
 </body>
 
 </html>
