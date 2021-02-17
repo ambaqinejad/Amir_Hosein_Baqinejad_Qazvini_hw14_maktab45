@@ -1,0 +1,22 @@
+.form-card {
+    padding: 20px;
+    border: 1px solid rgb(87, 86, 86, .4);
+    border-radius: 10px;
+}
+
+.courgette {
+    font-family: 'Courgette', cursive;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.decoration-not {
+    text-decoration: none;
+}
+
+.dangerText {
+    color: red;
+    display: none;
+}

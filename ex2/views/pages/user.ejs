@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/commonHead.ejs', title) %>
+</head>
+
+<body class="">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-sm-8 col-md-6 col-lg-4">
+                <div class="mt-3">
+                    <button id="logout-btn???<%= user.username %>" class="form-control btn btn-primary logout-btn">Log Out</button>
+                </div>
+                <div class="form-card mt-5">
+
+                    <h2 class="courgette text-center">Hello
+                        <%= user.username %>
+                    </h2>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" name="username" value="<%= user.username %>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="<%= user.password %>">
+                    </div>
+                    <div class=" mb-3 ">
+                        <label for="email " class="form-label ">Email:</label>
+                        <input type="email " class="form-control " id="email" placeholder="Email " name="email" value="<%= user.email %>">
+                    </div>
+                    <div class="mb-5 ">
+                        <label class="form-label">Gender:</label>
+                        <div id="radio-gender">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male" <%=user.gender==='male' ? 'checked' : '' %> >
+                                <label class="form-check-label" for="male">
+                                          Male
+                                        </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female" <%=user.gender==='female' ? 'checked' : '' %>>
+                                <label class="form-check-label" for="female">
+                                          Female
+                                        </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 ">
+                        <button id="update-btn???<%= user.username %>???<%= user.password %>" type="button " class="form-control btn btn-primary update-btn">Update</button>
+                    </div>
+                    <p id="updateNecessary" class="text-center dangerText">All inputs are necessary.</p>
+                    <p id="updateErrorText" class="text-center dangerText "></p>
+
+                </div>
+            </div>
+            <div class="col "></div>
+        </div>
+    </div>
+    <%- include('../partials/commonScripts.ejs') %>
+        <script src="/public/js/user.js"></script>
+</body>
+
+</html>

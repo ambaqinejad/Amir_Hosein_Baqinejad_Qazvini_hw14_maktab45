@@ -5,6 +5,8 @@ const loginController = require(path.join(path.dirname(__dirname), 'controllers'
 
 const router = express.Router();
 
-router.get('/', loginController.getLoginPage)
+router.get('/', loginController.getLoginPage);
+
+router.post('/login', loginController.checkLogin)
 
 module.exports = router;
